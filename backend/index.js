@@ -43,6 +43,26 @@ app.get('/getGames/:year', (req, res) => {
       res.status(500).json(err)
     })
 })
+app.get('/getSpecificMatch/:match', (req, res) => {
+  db.query(`select * from match_map_stats where match_id = ${req.params.match}`)
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
+app.get('/getSpecificRound/:match/:round', (req, res) => {
+  db.query(
+    `select * from match_map_stats where match_id = ${req.params.match} and game_number = ${req.params.round}`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
 // Get Players
 app.get('/2018/:player', (req, res) => {
   db.query(
