@@ -121,6 +121,17 @@ app.get('/getStats/:year/:player/:game', (req, res) => {
       res.status(500).json(err)
     })
 })
+app.get('/getSeasonStats/:year/:player', (req, res) => {
+  db.query(
+    `select * from owl_${req.params.year} where player like "${req.params.player}" and hero = "All Heroes"`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
