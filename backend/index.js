@@ -19,6 +19,17 @@ app.get('/getAllTeams', (req, res) => {
       res.status(500).json(err)
     })
 })
+app.get('/getTeams/:year', (req, res) => {
+  db.query(
+    `SELECT DISTINCT team_one_name as team FROM match_map_stats where round_start_time like "%${req.params.year}%"`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
 
 // Get Games
 app.get('/getAllGames', (req, res) => {
