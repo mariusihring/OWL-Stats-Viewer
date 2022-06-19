@@ -74,6 +74,17 @@ app.get('/getGame/:team', (req, res) => {
       res.status(500).json(err)
     })
 })
+app.get('/getGame/:year/:team', (req, res) => {
+  db.query(
+    `SELECT distinct match_id, match_winner, team_one_name, team_two_name FROM match_map_stats where team_one_name like "%${req.params.team}" or team_two_name like "%${req.params.team}" and round_start_time like "%${req.params.year}%";`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
 // Get Players
 app.get('/2018/:player', (req, res) => {
   db.query(
