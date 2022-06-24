@@ -11,7 +11,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 // Get Teams
 app.get('/getAllTeams', (req, res) => {
-  db.query(`SELECT DISTINCT team_one_name as team FROM match_map_stats`)
+  db.query(`SELECT Name, Logo FROM team_info`)
     .then((result) => {
       res.json(result)
     })
