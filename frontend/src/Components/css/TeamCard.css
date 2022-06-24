@@ -1,7 +1,96 @@
-.card {
-  border: 2px solid black;
+:root {
+  --reign: rgb(196, 196, 196);
+  --uprising: rgb(23, 75, 151);
+  --hunters: rgb(255, 160, 0);
+  --fuel: rgb(3, 35, 64);
+  --mayhem: rgb(0, 0, 0);
+  --charge: rgb(18, 44, 66);
+  --spark: rgb(251, 114, 153);
+  --outlaws: rgb(0, 0, 0);
+  --spitfire: rgb(89, 203, 232);
+  --gladiators: rgb(60, 16, 83);
+  --valiant: rgb(24, 136, 198);
+  --excelsior: rgb(23, 28, 56);
+  --eternal: rgb(48, 61, 86);
+  --fusion: rgb(0, 0, 0);
+  --shock: rgb(255, 0, 0);
+  --dynasty: rgb(0, 0, 0);
+  --defiant: rgb(0, 0, 0);
+  --dragons: rgb(210, 38, 48);
+  --titans: rgb(9, 34, 107);
+  --justice: rgb(153, 0, 52);
+}
 
+img {
   border-radius: 15px;
 
   padding: 0.5rem;
+  margin: 1rem;
+  height: 200px;
+  width: 200px;
+  background-color: lightgray;
+}
+h3 {
+  text-align: center;
+  margin: 0;
+}
+.Reign {
+  background-color: var(--reign);
+}
+.Uprising {
+  background-color: var(--uprising);
+}
+.Hunters {
+  background-color: var(--hunters);
+}
+.Fuel {
+  background-color: var(--fuel);
+}
+.Mayhem {
+  background-color: var(--mayhem);
+}
+.Charge {
+  background-color: var(--charge);
+}
+.Spark {
+  background-color: var(--spark);
+}
+.Outlaws {
+  background-color: var(--outlaws);
+}
+.Spitfire {
+  background-color: var(--spitfire);
+}
+.Gladiators {
+  background-color: var(--gladiators);
+}
+.Valiant {
+  background-color: var(--valiant);
+}
+.Excelsior {
+  background-color: var(--excelsior);
+}
+.Eternal {
+  background-color: var(--eternal);
+}
+.Fusion {
+  background-color: var(--fusion);
+}
+.Shock {
+  background-color: var(--shock);
+}
+.Dynasty {
+  background-color: var(--dynasty);
+}
+.Defiant {
+  background-color: var(--defiant);
+}
+.Dragons {
+  background-color: var(--dragons);
+}
+.Titans {
+  background-color: var(--titans);
+}
+.Justice {
+  background-color: var(--justice);
 }

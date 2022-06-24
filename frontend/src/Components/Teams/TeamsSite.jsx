@@ -19,9 +19,7 @@ function TeamsSite() {
   return (
     <div className='team-cards'>
       {Object.keys(teams).map((item) => {
-        return (
-          <TeamCard className='team-info' key={item} team={teams[item].team} />
-        )
+        return <TeamCard className='team-info' key={item} team={teams[item]} />
       })}
     </div>
   )
