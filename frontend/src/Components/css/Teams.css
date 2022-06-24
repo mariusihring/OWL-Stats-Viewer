@@ -33,3 +33,11 @@ button {
 body {
   font-family: 'Industry';
 }
+@media only screen and (max-width: 600px) {
+  .teamname {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+}

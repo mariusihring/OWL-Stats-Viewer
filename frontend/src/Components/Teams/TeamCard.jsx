@@ -7,7 +7,7 @@ function TeamCard(team) {
     <div className='card'>
       <div>
         <img className={team.team.Name} src={team.team.Logo} alt='' />
-        <h3>{team.team.Name.toUpperCase()}</h3>
+        <h3 className='teamname'>{team.team.Name.toUpperCase()}</h3>
       </div>
     </div>
   )
