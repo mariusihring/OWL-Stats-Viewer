@@ -23,9 +23,13 @@ button {
   height: 1.5rem;
 }
 .grid {
-  margin-top: 10%;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
 }
 
 .test {
   background-color: orange;
+}
+body {
+  font-family: 'Industry';
 }
