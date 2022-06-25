@@ -21,7 +21,7 @@ app.get('/getAllTeams', (req, res) => {
 })
 app.get('/getTeams/:year', (req, res) => {
   db.query(
-    `SELECT DISTINCT team_one_name as team FROM match_map_stats where round_start_time like "%${req.params.year}%"`
+    `select team_info.Name, team_info.Logo from team_info inner join teams_in_year on team_info.team_id = teams_in_year.team_id where teams_in_year.year = "${req.params.year}"`
   )
     .then((result) => {
       res.json(result)
