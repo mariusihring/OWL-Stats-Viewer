@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Games.css'
+import GameCard from './Gamecard/Gamecard'
 
 function Games() {
   const [active, setActive] = React.useState('all')
   function handleButtonClick(filter) {
     setActive(filter)
   }
+  const [games, setGames] = useState([])
+  const [teams, setTeams] = useState([])
+  const [filter, setFilter] = useState('all')
+  useEffect(() => {
+    fetch('http://127.0.0.1:1337/getAllTeams', {})
+      .then(async (response) => response.json())
+      .then(async (response) => {
+        setTeams(response)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [])
+  useEffect(() => {
+    if (filter === 'all') {
+      fetch('http://127.0.0.1:1337/getAllGames', {})
+        .then(async (response) => response.json())
+        .then(async (response) => {
+          setGames(response)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }, [filter])
   return (
     <div className='page'>
       <div className='header'>
@@ -42,6 +68,11 @@ function Games() {
             2018
           </button>
         </div>
+      </div>
+      <div className='gameCards'>
+        {Object.keys(games).map((game, index) => (
+          <GameCard game={games[game]} teams={teams} key={index} />
+        ))}
       </div>
     </div>
   )

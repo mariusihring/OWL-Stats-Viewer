@@ -3,3 +3,8 @@ body {
   align-content: center;
   justify-content: center;
 }
+
+.gameCards {
+  margin-top: 7rem;
+  margin-left: 1rem;
+}

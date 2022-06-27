@@ -11,7 +11,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 // Get Teams
 app.get('/getAllTeams', (req, res) => {
-  db.query(`SELECT Name, Logo FROM team_info`)
+  db.query(`SELECT Name, Logo, team_id FROM team_info`)
     .then((result) => {
       res.json(result)
     })
@@ -34,7 +34,7 @@ app.get('/getTeams/:year', (req, res) => {
 // Get Games
 app.get('/getAllGames', (req, res) => {
   db.query(
-    `SELECT DISTINCT match_map_stats.match_id, match_map_stats.map_winner as winner, match_map_stats.match_winner as "match winner", match_map_stats.map_loser as loser from match_map_stats`
+    `select DISTINCT match_id, match_winner, map_winner, map_loser from match_map_stats;`
   )
     .then((result) => {
       res.json(result)
