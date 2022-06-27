@@ -1,34 +1,37 @@
 import React, { useState } from 'react'
 import './App.css'
+import Games from './Components/Games/Games'
 import Teams from './Components/Teams/Teams'
 function App() {
-  const [activePage, setActivePage] = useState('teams')
+  const [activeContent, setActiveContent] = useState('teams')
+  const [activePage, setActivePage] = useState('games')
   function handleClick(page) {
+    setActiveContent(page)
     setActivePage(page)
   }
   return (
     <div className='App'>
       <div className='Navigation'>
         <button
-          className={activePage == 'games' ? 'activePage' : 'null'}
+          className={activeContent == 'games' ? 'activePage' : 'null'}
           onClick={() => handleClick('games')}
         >
           Games
         </button>
         <button
-          className={activePage == 'teams' ? 'activePage' : 'null'}
+          className={activeContent == 'teams' ? 'activePage' : 'null'}
           onClick={() => handleClick('teams')}
         >
           Teams
         </button>
         <button
-          className={activePage == 'players' ? 'activePage' : 'null'}
+          className={activeContent == 'players' ? 'activePage' : 'null'}
           onClick={() => handleClick('players')}
         >
           Players
         </button>
         <button
-          className={activePage == 'heroes' ? 'activePage' : 'null'}
+          className={activeContent == 'heroes' ? 'activePage' : 'null'}
           onClick={() => handleClick('heroes')}
         >
           Heroes
@@ -36,7 +39,10 @@ function App() {
       </div>
       <div className='Content'>
         <div>
-          <Teams />
+          {activePage === 'games' && <Games />}
+          {activePage === 'teams' && <Teams />}
+          {activePage === 'players' && <Teams />}
+          {activePage === 'players' && <Teams />}
         </div>
       </div>
     </div>
