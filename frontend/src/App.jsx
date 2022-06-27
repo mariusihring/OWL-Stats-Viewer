@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './App.css'
 import Games from './Components/Games/Games'
-import Teams from './Components/Teams/Teams'
+import Teams from './Components/Teams/teamOverview/Teams'
 function App() {
-  const [activeContent, setActiveContent] = useState('teams')
+  const [activeContent, setActiveContent] = useState('games')
   const [activePage, setActivePage] = useState('games')
   function handleClick(page) {
     setActiveContent(page)

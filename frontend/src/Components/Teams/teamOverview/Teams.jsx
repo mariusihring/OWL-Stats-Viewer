@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import TeamCard from './TeamCard'
-import '../css/Teams.css'
+import TeamCard from '../teamcard/TeamCard'
+import './Teams.css'
 
 function Teams() {
   const [filter, setFilter] = useState('all')

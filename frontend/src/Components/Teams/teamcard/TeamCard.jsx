@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import '../css/TeamCard.css'
+import './TeamCard.css'
 
 function TeamCard(team) {
   return (
