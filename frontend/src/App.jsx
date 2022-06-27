@@ -11,7 +11,9 @@ function App() {
         <button>Heroes</button>
       </div>
       <div className='Content'>
-        <Teams />
+        <div>
+          <Teams />
+        </div>
       </div>
     </div>
   )

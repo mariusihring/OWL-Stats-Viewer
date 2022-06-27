@@ -11,7 +11,13 @@
   height: 100%;
 }
 .header {
-  margin-left: 5%;
+  position: absolute;
+  top: 0;
+  margin-left: 3%;
+  padding-left: 2%;
+  padding-bottom: 1%;
+  background-color: #f5f6f7;
+  width: 100%;
 }
 button {
   margin-right: 0.5rem;
@@ -21,7 +27,7 @@ button {
   height: 1.5rem;
 }
 .grid {
-  margin-top: 5vh;
+  margin-top: 10vh;
   margin-bottom: 5vh;
 }
 

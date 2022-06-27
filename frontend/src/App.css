@@ -1,5 +1,6 @@
-App {
+.App {
   display: inline-flex;
+  background-color: #090807;
 }
 
 .Navigation {
@@ -7,6 +8,7 @@ App {
   display: flex;
   flex-direction: column;
   width: 160px;
+
   align-items: center;
   justify-content: center;
   float: left;
@@ -17,6 +19,9 @@ App {
 }
 .Content {
   flex: 1;
-
+  border-radius: 25px 0px 0px 25px;
   margin-left: 160px;
+  background-color: #f5f6f7;
+  overflow-y: scroll;
+  max-height: 100vh;
 }
