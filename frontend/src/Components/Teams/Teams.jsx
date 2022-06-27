@@ -21,7 +21,9 @@ function Teams() {
       <div className='header'>
         <h1>Teams</h1>
         <div className='year-buttons'>
-          <button className='test'>All</button>
+          <button className='test' onClick={handleButtonClick}>
+            All
+          </button>
           <button>2021</button>
           <button>2020</button>
           <button>2019</button>
