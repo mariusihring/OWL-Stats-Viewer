@@ -1,21 +1,26 @@
 .App {
   display: inline-flex;
   background-color: #090807;
+  font-family: 'Industry';
+  width: 100vw;
 }
 
 .Navigation {
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 160px;
+  width: 180px;
 
-  align-items: center;
   justify-content: center;
   float: left;
   margin-top: 40vh;
 }
 .Navigation button {
-  margin: 5px;
+  margin: 1rem;
+  color: white;
+  background-color: transparent;
+  font-size: 25px;
+  text-transform: uppercase;
 }
 .Content {
   flex: 1;
@@ -23,5 +28,11 @@
   margin-left: 160px;
   background-color: #f5f6f7;
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 100vh;
+  max-width: 90vw;
+}
+.activePage {
+  text-decoration: underline orange 2px;
+  text-underline-offset: 4px;
 }
