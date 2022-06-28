@@ -29,10 +29,11 @@ button {
 .grid {
   margin-top: 10vh;
   margin-bottom: 5vh;
+  padding: 2rem;
 }
 
 body {
-  font-family: "Industry";
+  font-family: 'Industry';
   overflow-x: hidden;
 }
 
