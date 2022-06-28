@@ -31,11 +31,8 @@ button {
   margin-bottom: 5vh;
 }
 
-.test {
-  background-color: orange;
-}
 body {
-  font-family: 'Industry';
+  font-family: "Industry";
   overflow-x: hidden;
 }
 
