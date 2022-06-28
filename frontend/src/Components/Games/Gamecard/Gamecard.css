@@ -2,6 +2,13 @@ h2 {
   margin-left: 1rem;
 }
 
-body h2 {
+body p {
   text-align: center;
+  font-family: "Industry";
+}
+
+.winner {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline green 2px;
 }

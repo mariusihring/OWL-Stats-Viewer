@@ -1,7 +1,7 @@
 .App {
   display: inline-flex;
   background-color: #090807;
-  font-family: 'Industry';
+  font-family: "Industry";
   width: 100vw;
 }
 
@@ -30,7 +30,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 100vh;
-  max-width: 90vw;
+
   height: 100vh;
 }
 .activePage {
