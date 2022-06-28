@@ -14,19 +14,25 @@ function GameCard(data) {
   return (
     <div className='game-card'>
       <div className=' firstLogo'>
-        <img className='logo-preview' src={firstTeamPic} />
+        <img
+          className={
+            match_winner === firstTeam ? 'winner logo-preview' : 'logo-preview'
+          }
+          src={firstTeamPic}
+        />
       </div>
       <div className='content'>
-        <p className={match_winner === firstTeam ? 'winner' : null}>
-          {firstTeam}
-        </p>
+        <p>{firstTeam}</p>
         {' : '}
-        <p className={match_winner === secondTeam ? 'winner' : null}>
-          {secondTeam}
-        </p>
+        <p>{secondTeam}</p>
       </div>
       <div className='secondLogo'>
-        <img className='logo-preview' src={secondTeamPic} />
+        <img
+          className={
+            match_winner === secondTeam ? 'winner logo-preview' : 'logo-preview'
+          }
+          src={secondTeamPic}
+        />
       </div>
     </div>
   )

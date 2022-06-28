@@ -11,9 +11,10 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 2.5rem;
+
   border-radius: 25px;
+  background-color: lightgray;
 }
 
 .logo-preview {
@@ -35,4 +36,12 @@ h2 {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.content p {
+  margin: 10px;
+}
+
+.winner {
+  background-color: lightgreen;
 }
