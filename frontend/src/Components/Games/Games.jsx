@@ -4,8 +4,9 @@ import GameCard from './Gamecard/Gamecard'
 
 function Games() {
   const [active, setActive] = React.useState('all')
-  function handleButtonClick(filter) {
-    setActive(filter)
+  function handleButtonClick(e) {
+    setActive(e)
+    setFilter(e)
   }
   const [games, setGames] = useState([])
   const [teams, setTeams] = useState([])
@@ -25,6 +26,21 @@ function Games() {
       fetch('http://127.0.0.1:1337/getAllGames', {})
         .then((response) => response.json())
         .then((response) => {
+          setGames(response)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+    if (
+      (filter === '2021') |
+      (filter === '2020') |
+      (filter === '2019') |
+      (filter === '2018')
+    ) {
+      fetch(`http://127.0.0.1:1337/getGames/${filter}`, {})
+        .then(async (response) => response.json())
+        .then(async (response) => {
           setGames(response)
         })
         .catch((err) => {
@@ -70,9 +86,9 @@ function Games() {
         </div>
       </div>
       <div className='gameCards'>
-        {Object.keys(games).map((game, index) => (
-          <GameCard game={games[game]} teams={teams} key={index} />
-        ))}
+        {Object.keys(games).map((game, index) => {
+          return <GameCard game={games[game]} teams={teams} key={index} />
+        })}
       </div>
     </div>
   )

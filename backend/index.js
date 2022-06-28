@@ -45,7 +45,7 @@ app.get('/getAllGames', (req, res) => {
 })
 app.get('/getGames/:year', (req, res) => {
   db.query(
-    `SELECT DISTINCT match_map_stats.match_id, match_map_stats.map_winner as winner, match_map_stats.match_winner as "match winner", match_map_stats.map_loser as loser from match_map_stats where match_map_stats.round_start_time like "%${req.params.year}%"`
+    `SELECT DISTINCT match_id, map_winner , match_winner, map_loser from match_map_stats where round_start_time like "%${req.params.year}%"`
   )
     .then((result) => {
       res.json(result)
