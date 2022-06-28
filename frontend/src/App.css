@@ -3,6 +3,7 @@
   background-color: #090807;
   font-family: 'Industry';
   width: 100vw;
+  height: 100vh;
 }
 
 .Navigation {
@@ -29,7 +30,6 @@
   background-color: #f5f6f7;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 100vh;
 
   height: 100vh;
 }
