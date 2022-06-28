@@ -23,8 +23,8 @@ function Games() {
   useEffect(() => {
     if (filter === 'all') {
       fetch('http://127.0.0.1:1337/getAllGames', {})
-        .then(async (response) => response.json())
-        .then(async (response) => {
+        .then((response) => response.json())
+        .then((response) => {
           setGames(response)
         })
         .catch((err) => {

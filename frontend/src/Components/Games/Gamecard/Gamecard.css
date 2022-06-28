@@ -2,13 +2,37 @@ h2 {
   margin-left: 1rem;
 }
 
-body p {
+.game-card {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'firstLogo main secondLogo';
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-family: "Industry";
+  margin-top: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
 }
 
-.winner {
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: underline green 2px;
+.logo-preview {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+}
+
+.firstLogo {
+  grid-area: firstLogo;
+}
+
+.secondLogo {
+  grid-area: secondLogo;
+}
+
+.content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }

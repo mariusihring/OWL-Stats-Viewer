@@ -1,23 +1,35 @@
-import React from "react";
-import "./Gamecard.css";
+import React from 'react'
+import './Gamecard.css'
 
-function GameCard(props) {
-  const match_winner = props.teams[props.game.match_winner - 1].Name;
-  const firstTeam = props.teams[props.game.map_winner - 1].Name;
-  const secondTeam = props.teams[props.game.map_loser - 1].Name;
+function GameCard(data) {
+  let match_winner = data.teams[data.game.match_winner - 1].Name
+  let firstTeam = data.teams[data.game.map_winner - 1].Name
+  let secondTeam = data.teams[data.game.map_loser - 1].Name
+  let firstTeamPic = data.teams[data.game.map_winner - 1].Logo
+  let secondTeamPic = data.teams[data.game.map_loser - 1].Logo
+
+  if (firstTeam === 'Draw') {
+    return null
+  }
   return (
-    <div className="game-card">
-      <p>
-        <span className={match_winner === firstTeam ? "winner" : null}>
+    <div className='game-card'>
+      <div className=' firstLogo'>
+        <img className='logo-preview' src={firstTeamPic} />
+      </div>
+      <div className='content'>
+        <p className={match_winner === firstTeam ? 'winner' : null}>
           {firstTeam}
-        </span>
-        {" : "}
-        <span className={match_winner === secondTeam ? "winner" : null}>
+        </p>
+        {' : '}
+        <p className={match_winner === secondTeam ? 'winner' : null}>
           {secondTeam}
-        </span>
-      </p>
+        </p>
+      </div>
+      <div className='secondLogo'>
+        <img className='logo-preview' src={secondTeamPic} />
+      </div>
     </div>
-  );
+  )
 }
 
-export default GameCard;
+export default GameCard
