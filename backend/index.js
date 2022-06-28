@@ -11,7 +11,9 @@ var corsOptions = {
 app.use(cors(corsOptions))
 // Get Teams
 app.get('/getAllTeams', (req, res) => {
-  db.query(`SELECT Name, Logo, team_id FROM team_info`)
+  db.query(
+    `SELECT Name, Logo, team_id FROM team_info where Name not like "draw"`
+  )
     .then((result) => {
       res.json(result)
     })
