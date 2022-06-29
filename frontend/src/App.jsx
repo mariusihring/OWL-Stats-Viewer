@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Games from './Components/Games/Games'
 import Teams from './Components/Teams/teamOverview/Teams'
+import Players from './Components/Players/PlayerOverview/Players.jsx'
 function App() {
   const [activeContent, setActiveContent] = useState('games')
   const [activePage, setActivePage] = useState('games')
@@ -41,8 +42,8 @@ function App() {
         <div>
           {activePage === 'games' && <Games />}
           {activePage === 'teams' && <Teams />}
-          {activePage === 'players' && <Teams />}
-          {activePage === 'players' && <Teams />}
+          {activePage === 'players' && <Players />}
+          {activePage === 'heroes' && <Teams />}
         </div>
       </div>
     </div>
