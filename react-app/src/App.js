@@ -39,18 +39,52 @@ function App() {
             <div className='flex-none hidden lg:block'>
               <ul className='menu menu-horizontal'>
                 <li>
-                  <button onClick={() => handleClick('games')}>Games</button>
+                  <button
+                    className={
+                      activeContent === 'games'
+                        ? 'btn-primary rounded text-black'
+                        : ''
+                    }
+                    onClick={() => handleClick('games')}
+                  >
+                    Games
+                  </button>
                 </li>
                 <li>
-                  <button onClick={() => handleClick('teams')}>Teams</button>
+                  <button
+                    className={
+                      activeContent === 'teams'
+                        ? 'btn-primary rounded text-black'
+                        : ''
+                    }
+                    onClick={() => handleClick('teams')}
+                  >
+                    Teams
+                  </button>
                 </li>
                 <li>
-                  <button onClick={() => handleClick('players')}>
+                  <button
+                    className={
+                      activeContent === 'players'
+                        ? 'btn-primary rounded text-black'
+                        : ''
+                    }
+                    onClick={() => handleClick('players')}
+                  >
                     Players
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => handleClick('heroes')}>Heroes</button>
+                  <button
+                    className={
+                      activeContent === 'heroes'
+                        ? 'btn-primary rounded text-black'
+                        : ''
+                    }
+                    onClick={() => handleClick('heroes')}
+                  >
+                    Heroes
+                  </button>
                 </li>
               </ul>
             </div>
