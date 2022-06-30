@@ -97,7 +97,7 @@ function Games() {
           2018
         </button>
       </div>
-      <div className='w-full px-15'>
+      <div className=' mx-auto'>
         {Object.keys(games).map((game, index) => {
           return (
             <GameCard

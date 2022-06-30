@@ -11,9 +11,9 @@ function GameCard(data) {
     return null
   }
   return (
-    <div class='flex flex-col w-full lg:flex-row p-8'>
-      <div class='grid flex-grow h-36 card bg-base-300 rounded-box place-items-center'>
-        <img src={firstTeamPic} className='w-16' />
+    <div class='flex flex-col w-full lg:flex-row p-7 justify-center'>
+      <div class='grid flex-grow h-42 card bg-base-300 rounded-box  place-items-center lg:w-48'>
+        <img src={firstTeamPic} className='w-16 my-5' />
         <div className='text-center'>{firstTeam}</div>
         {firstTeam === match_winner ? (
           <span class='badge badge-success my-5'>Winner</span>
@@ -22,8 +22,8 @@ function GameCard(data) {
         )}
       </div>
       <div class='divider lg:divider-horizontal'>Vs.</div>
-      <div class='grid flex-grow h-36 card bg-base-300 rounded-box place-items-center'>
-        <img src={secondTeamPic} className='w-16 object-left' />
+      <div class='grid flex-grow h-42 card bg-base-300 rounded-box  place-items-center lg:w-48'>
+        <img src={secondTeamPic} className='w-16 my-5' />
         <div className='text-center object-center'>{secondTeam}</div>
         {secondTeam === match_winner ? (
           <span class='badge badge-success my-5'>Winner</span>
