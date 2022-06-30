@@ -1,5 +1,4 @@
 import React from 'react'
-import './Gamecard.css'
 
 function GameCard(data) {
   let match_winner = data.teams[data.game.match_winner - 1].Name

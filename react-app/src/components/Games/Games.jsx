@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Games.css'
+
 import GameCard from './Gamecard/Gamecard'
 
 function Games() {
