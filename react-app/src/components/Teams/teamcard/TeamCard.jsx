@@ -1,16 +1,22 @@
 import React from 'react'
 
-import './TeamCard.css'
-
 function TeamCard(team) {
   if (team.team.Name === 'Draw') {
     return null
   }
   return (
-    <div className='card'>
-      <div>
-        <img className={team.team.Name} src={team.team.Logo} alt='' />
-        <h3 className='teamname'>{team.team.Name.toUpperCase()}</h3>
+    <div className='card w-96 bg-slate-800 shadow-xl'>
+      <figure>
+        <img
+          src={team.team.Logo}
+          alt='Team Logo'
+          className=' w-96 sm:w-64  select-none'
+        />
+      </figure>
+      <div className='card-body'>
+        <h2 className='card-title  select-none'>
+          {team.team.Name.toUpperCase()}
+        </h2>
       </div>
     </div>
   )

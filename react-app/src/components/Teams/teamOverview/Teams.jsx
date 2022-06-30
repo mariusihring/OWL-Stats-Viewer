@@ -39,47 +39,66 @@ function Teams() {
   }
 
   return (
-    <div className='page'>
-      <div className='header'>
-        <h1>Teams</h1>
-        <div className='year-buttons'>
+    <div className=' overflow-hidden'>
+      <div className='p-5'>
+        <div className='text-center'>
           <button
-            className={active === 'all' ? 'active' : null}
+            className={
+              'btn-md  rounded-xl ' +
+              (filter === 'all' ? 'btn-primary ring' : '')
+            }
             onClick={() => handleButtonClick('all')}
           >
             All
           </button>
+
           <button
-            className={active === '2021' ? 'active' : null}
+            className={
+              'btn-md  rounded-xl ' +
+              (filter === '2021' ? 'btn-primary ring' : '')
+            }
             onClick={() => handleButtonClick('2021')}
           >
             2021
           </button>
           <button
-            className={active === '2020' ? 'active' : null}
+            className={
+              'btn-md  rounded-xl ' +
+              (filter === '2020' ? 'btn-primary ring' : '')
+            }
             onClick={() => handleButtonClick('2020')}
           >
             2020
           </button>
           <button
-            className={active === '2019' ? 'active' : null}
+            className={
+              'btn-md  rounded-xl ' +
+              (filter === '2019' ? 'btn-primary ring' : '')
+            }
             onClick={() => handleButtonClick('2019')}
           >
             2019
           </button>
           <button
-            className={active === '2018' ? 'active' : null}
+            className={
+              'btn-md  rounded-xl ' +
+              (filter === '2018' ? 'btn-primary ring' : '')
+            }
             onClick={() => handleButtonClick('2018')}
           >
             2018
           </button>
         </div>
       </div>
-      <div className='grid'>
-        <div className='team-cards'>
+      <div className=''>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 mx-px place-items-center'>
           {Object.keys(teams).map((item) => {
             return (
-              <TeamCard className='team-info' key={item} team={teams[item]} />
+              <TeamCard
+                className='space-x-4 flex-row'
+                key={item}
+                team={teams[item]}
+              />
             )
           })}
         </div>

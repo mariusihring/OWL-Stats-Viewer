@@ -13,7 +13,7 @@ function App() {
     setActivePage(page)
   }
   return (
-    <div className='App'>
+    <div className='w-screen overflow-x-hidden'>
       <div className='drawer'>
         <input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content flex flex-col'>
@@ -35,9 +35,7 @@ function App() {
                 </svg>
               </label>
             </div>
-            <div className='flex-1 px-2 mx-2'>
-              Overwatch League Stats Viewer
-            </div>
+            <div className='flex-1 px-2 mx-2'>Overwatch League Stats</div>
             <div className='flex-none hidden lg:block'>
               <ul className='menu menu-horizontal'>
                 <li>
@@ -57,7 +55,7 @@ function App() {
               </ul>
             </div>
           </div>
-          <div className='Content'>
+          <div className=''>
             <div>
               {activePage === 'games' && <Games />}
               {activePage === 'teams' && <Teams />}
@@ -70,16 +68,16 @@ function App() {
           <label htmlFor='my-drawer-3' class='drawer-overlay'></label>
           <ul className='menu p-4 overflow-y-auto w-80 bg-base-100'>
             <li>
-              <button>Navbar Item 1</button>
+              <button onClick={() => handleClick('games')}>Games</button>
             </li>
             <li>
-              <button>Navbar Item 1</button>
+              <button onClick={() => handleClick('teams')}>Teams</button>
             </li>
             <li>
-              <button>Navbar Item 1</button>
+              <button onClick={() => handleClick('players')}>Players</button>
             </li>
             <li>
-              <button>Navbar Item 1</button>
+              <button onClick={() => handleClick('heroes')}>Heroes</button>
             </li>
           </ul>
         </div>
