@@ -1,6 +1,6 @@
 import Games from './components/Games/Games'
 import Teams from './components/Teams/teamOverview/Teams'
-import Players from './components/Games/Games'
+import Players from './components/Players/PlayerOverview/Players'
 import Heroes from './components/Games/Games'
 import React from 'react'
 import { useState, useEffect } from 'react'
