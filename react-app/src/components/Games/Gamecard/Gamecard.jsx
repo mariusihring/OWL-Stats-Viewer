@@ -11,27 +11,25 @@ function GameCard(data) {
     return null
   }
   return (
-    <div className='game-card'>
-      <div className=' firstLogo'>
-        <img
-          className={
-            match_winner === firstTeam ? 'winner logo-preview' : 'logo-preview'
-          }
-          src={firstTeamPic}
-        />
+    <div class='flex flex-col w-full lg:flex-row p-8'>
+      <div class='grid flex-grow h-36 card bg-base-300 rounded-box place-items-center'>
+        <img src={firstTeamPic} className='w-16' />
+        <div className='text-center'>{firstTeam}</div>
+        {firstTeam === match_winner ? (
+          <span class='badge badge-success my-5'>Winner</span>
+        ) : (
+          <span class='badge badge-warning my-5'>Loser</span>
+        )}
       </div>
-      <div className='content'>
-        <p>{firstTeam}</p>
-        {' : '}
-        <p>{secondTeam}</p>
-      </div>
-      <div className='secondLogo'>
-        <img
-          className={
-            match_winner === secondTeam ? 'winner logo-preview' : 'logo-preview'
-          }
-          src={secondTeamPic}
-        />
+      <div class='divider lg:divider-horizontal'>Vs.</div>
+      <div class='grid flex-grow h-36 card bg-base-300 rounded-box place-items-center'>
+        <img src={secondTeamPic} className='w-16 object-left' />
+        <div className='text-center object-center'>{secondTeam}</div>
+        {secondTeam === match_winner ? (
+          <span class='badge badge-success my-5'>Winner</span>
+        ) : (
+          <span class='badge badge-warning my-5'>Loser</span>
+        )}
       </div>
     </div>
   )
