@@ -4,14 +4,14 @@ import PlayerCard from '../PlayerCard/Playercard'
 
 function Players() {
   const [filter, setFilter] = useState('all')
-  const [player, setPlayer] = useState([])
+  const [players, setPlayers] = useState([])
   const [active, setActive] = useState('all')
   useEffect(() => {
-    if (filter === '2018') {
+    if (filter === 'all') {
       fetch('http://127.0.0.1:1337/getPlayers', {})
         .then(async (response) => response.json())
         .then(async (response) => {
-          setTeams(response)
+          setPlayers(response)
         })
         .catch((err) => {
           console.log(err)
@@ -26,7 +26,7 @@ function Players() {
       fetch(`http://127.0.0.1:1337/getTeams/${filter}`, {})
         .then(async (response) => response.json())
         .then(async (response) => {
-          setTeams(response)
+          setPlayers(response)
         })
         .catch((err) => {
           console.log(err)
@@ -92,12 +92,12 @@ function Players() {
       </div>
       <div className=''>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 mx-px place-items-center'>
-          {Object.keys(teams).map((item) => {
+          {Object.keys(players).map((item) => {
             return (
               <PlayerCard
                 className='space-x-4 flex-row'
                 key={item}
-                team={teams[item]}
+                team={players[item]}
               />
             )
           })}
