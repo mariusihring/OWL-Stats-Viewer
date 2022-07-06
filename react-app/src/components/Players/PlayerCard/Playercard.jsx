@@ -1,8 +1,4 @@
-function PlayerCard() {
-  return (
-    <div>
-      <h2>test</h2>
-    </div>
-  )
+function PlayerCard(props) {
+  return console.log(props)
 }
 export default PlayerCard

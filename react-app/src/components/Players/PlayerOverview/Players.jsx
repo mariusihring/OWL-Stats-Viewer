@@ -8,7 +8,7 @@ function Players() {
   const [active, setActive] = useState('all')
   useEffect(() => {
     if (filter === 'all') {
-      fetch('http://127.0.0.1:1337/getPlayers', {})
+      fetch('http://127.0.0.1:1337/getALlPlayers', {})
         .then(async (response) => response.json())
         .then(async (response) => {
           setPlayers(response)

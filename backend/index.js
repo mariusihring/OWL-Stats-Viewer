@@ -30,7 +30,29 @@ app.get('/getTeams/:year', (req, res) => {
       res.status(500).json(err)
     })
 })
-
+// Get Players
+app.post('/insertPlayer/:name/:team', (req, res) => {
+  db.query(
+    `insert into player_info (Name, team) values ("${req.params.name}", "${req.params.team}")`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
+app.get('/getPlayers/:year', (req, res) => {
+  db.query(
+    `select distinct owl_${req.params.year}.player , team from owl_${req.params.year}`
+  )
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.status(500).json(err)
+    })
+})
 // Get Games
 app.get('/getAllGames', (req, res) => {
   db.query(
