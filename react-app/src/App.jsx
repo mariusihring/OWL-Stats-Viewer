@@ -3,11 +3,12 @@ import Teams from './components/Teams/teamOverview/Teams'
 import Players from './components/Players/PlayerOverview/Players'
 import Heroes from './components/Games/Games'
 import React from 'react'
+import Home from './components/home/Home'
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [activeContent, setActiveContent] = useState('games')
-  const [activePage, setActivePage] = useState('games')
+  const [activeContent, setActiveContent] = useState('home')
+  const [activePage, setActivePage] = useState('home')
   function handleClick(page) {
     setActiveContent(page)
     setActivePage(page)
@@ -37,9 +38,12 @@ function App() {
             </div>
             <button
               className='flex-1 px-2 mx-2'
-              onClick={() => handleClick('games')}
+              onClick={() => handleClick('home')}
             >
-              Overwatch League Stats
+              <img
+                className='w-6 h-6'
+                src='https://images.blz-contentstack.com/v3/assets/blt321317473c90505c/bltc8053953f59eb482/5d71a2b5cd4bff10737ca491/favicon-32x32.png?auto=webp'
+              />
             </button>
             <div className='flex-none hidden lg:block'>
               <ul className='menu menu-horizontal'>
@@ -96,6 +100,7 @@ function App() {
           </div>
           <div className=''>
             <div className='mb-8'>
+              {activePage === 'home' && <Home />}
               {activePage === 'games' && <Games />}
               {activePage === 'teams' && <Teams />}
               {activePage === 'players' && <Players />}
